@@ -1,0 +1,7 @@
+<button (click)="getDataFromApi()">PRENDI DATI</button>
+
+<ul *ngFor="let d of data" routerLink="/detail/{{data}}">
+  <li>
+  {{d.id}} = {{d.title}}
+  </li>
+</ul>
