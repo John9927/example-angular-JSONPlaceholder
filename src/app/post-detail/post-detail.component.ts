@@ -19,11 +19,12 @@ export class PostDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getDataFromApi();
   }
 
   getDataFromApi(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.JSONPlaceholder.getData(id)
+    const id = this.route.snapshot.paramMap.get('id');
+    this.JSONPlaceholder.getData()
       .subscribe(data => this.data = data);
   }
 
