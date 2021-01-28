@@ -9,11 +9,9 @@ import { Data } from './../data';
 })
 export class PostListComponent  {
 
-  data: Data[] = [];
+  data: Data;
 
-  constructor(private JSONPlaceholder: JSONPlaceholderService) {
-
-  }
+  constructor(private JSONPlaceholder: JSONPlaceholderService) {}
 
   getDataFromApi() {
     this.JSONPlaceholder.getData().subscribe(data => this.data = data);

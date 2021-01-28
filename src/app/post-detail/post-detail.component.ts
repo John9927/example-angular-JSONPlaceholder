@@ -10,7 +10,7 @@ import { Data } from './../data';
 })
 export class PostDetailComponent implements OnInit {
 
-  data: Data;
+ data: Data;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,14 +20,20 @@ export class PostDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.getDataFromApi();
+    // this.getDataFromApi();
+    this.getData();
   }
 
-  getDataFromApi(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.JSONPlaceholder.getData()
-      .subscribe(data => this.data = data);
+  // getDataFromApi(): void {
+  //   const id = Number(this.route.snapshot.paramMap.get('id'));
+  //   this.JSONPlaceholder.getData()
+  //     .subscribe(data => this.data = data);
+  // }
 
+  getData(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.JSONPlaceholder.getDetail()
+      .subscribe(id => this.data = id);
   }
 
 }
