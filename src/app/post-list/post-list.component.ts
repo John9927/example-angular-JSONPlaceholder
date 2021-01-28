@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { JSONPlaceholderService } from '../services/jsonplaceholder.service';
 
+import { JSONPlaceholderService } from '../services/jsonplaceholder.service';
+import { Data } from './../data';
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -8,10 +9,10 @@ import { JSONPlaceholderService } from '../services/jsonplaceholder.service';
 })
 export class PostListComponent  {
 
-  data:Array<any>
+  data: Data[] = [];
 
   constructor(private JSONPlaceholder: JSONPlaceholderService) {
-    this.data = new Array<any>()
+
   }
 
   getDataFromApi() {

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { JSONPlaceholderService } from '../services/jsonplaceholder.service';
 
+import { JSONPlaceholderService } from '../services/jsonplaceholder.service';
+import { Data } from './../data';
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
@@ -9,13 +10,13 @@ import { JSONPlaceholderService } from '../services/jsonplaceholder.service';
 })
 export class PostDetailComponent implements OnInit {
 
-  data:Array<any>
+  data: Data;
 
   constructor(
     private route: ActivatedRoute,
     private JSONPlaceholder: JSONPlaceholderService,
   ) {
-    this.data = new Array<any>()
+
    }
 
   ngOnInit(): void {
