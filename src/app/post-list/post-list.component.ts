@@ -9,7 +9,7 @@ import { Data } from './../data';
 })
 export class PostListComponent  {
 
-  data: Data;
+ public data: Data[] | undefined;
 
   constructor(private JSONPlaceholder: JSONPlaceholderService) {}
 

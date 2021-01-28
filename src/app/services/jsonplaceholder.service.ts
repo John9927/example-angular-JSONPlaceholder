@@ -11,13 +11,13 @@ export class JSONPlaceholderService {
 
   constructor(private http: HttpClient,) {}
 
-    getData(): Observable<Data> {
-      return this.http.get<Data>(url)
+    getData(): Observable<Data[]> {
+      this.http.get<Data[]>(url).subscribe()
+      return this.http.get<Data[]>(url)
     }
 
     getDetail(id: number): Observable<Data>{
       return this.http.get<Data>(`${url}/${id}`);
-
     }
 
 }
