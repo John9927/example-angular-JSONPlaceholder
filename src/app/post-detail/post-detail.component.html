@@ -1,10 +1,8 @@
 <div *ngIf="data">
-
   <div *ngFor="let d of data">
     <span>id: </span>{{d.id}}
     <label>Nome:
       <input [(ngModel)]="d.title"/>
     </label>
   </div>
-
 </div>

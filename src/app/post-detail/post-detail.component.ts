@@ -23,9 +23,10 @@ export class PostDetailComponent implements OnInit {
   }
 
   getDataFromApi(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     this.JSONPlaceholder.getData()
       .subscribe(data => this.data = data);
+
   }
 
 }
